@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello PWA</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png" type="image/png" />
+    <script>
+    // 检测浏览器是否支持SW
+    if (navigator.serviceWorker != null) {
+        navigator.serviceWorker.register('sw.js')
+            .then(function(registartion) {
+                console.log('支持sw:', registartion.scope)
+            }).catch(function(err) {
+                console.log(err)
+            });
+    }
+    </script>
+</head>
+
+<body>
+    <h3>Hello PWA</h3>
+    <img src="test.jpg" alt="">
+</body>
+
+</html>
